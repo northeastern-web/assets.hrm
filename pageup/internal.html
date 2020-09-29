@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+ <html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Northeastern University Careers Portal - {page-title listing="Recent Jobs" search="Search Results" detail="Details - [job.title]"}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        {css}
+        {javascript}
+
+        <style>
+            html, body, div, span, applet, object, iframe,
+            h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+            a, abbr, acronym, address, big, cite, code,
+            del, dfn, em, img, ins, kbd, q, s, samp,
+            small, strike, strong, sub, sup, tt, var,
+            b, u, i, center,
+            dl, dt, dd, ol, ul, li,
+            fieldset, form, label, legend,
+            table, caption, tbody, tfoot, thead, tr, th, td,
+            article, aside, canvas, details, embed,
+            figure, figcaption, footer, header, hgroup,
+            menu, nav, output, ruby, section, summary,
+            time, mark, audio, video {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-size: 100%;
+                font: inherit;
+                vertical-align: baseline;
+            }
+            /* HTML5 display-role reset for older browsers */
+            article, aside, details, figcaption, figure,
+            footer, header, hgroup, menu, nav, section {
+                display: block;
+            }
+            body {
+                line-height: 1;
+            }
+            ol, ul {
+                list-style: none;
+            }
+            blockquote, q {
+                quotes: none;
+            }
+            blockquote:before, blockquote:after,
+            q:before, q:after {
+                content: '';
+                content: none;
+            }
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+
+
+            /********************************************************************************************
+            ********************************* GENERAL STYLES ********************************************
+            ********************************************************************************************/
+
+            body {
+                font-family: 'Lato', sans-serif;
+            }
+
+            .container {
+                max-width: 94vw;
+            }
+
+            h2 {
+                text-transform: uppercase;
+            }
+
+            h3 {
+                font-weight: bold;
+            }
+
+            header {
+                background: transparent;
+            }
+
+            .header-middle {
+                background: #000;
+            }
+
+            header ul {
+                margin-top: 20px;
+            }
+
+            header ul li a {
+                color: #ababab;
+                border-right: 1px solid #ababab;
+                padding: 0 8px 0 5px;
+                font-size: .75rem;
+            }
+
+
+            header input[type="search"] {
+                background: transparent;
+                border: none;
+                border-bottom: 2px solid #ababab;
+                width: 275px;
+                margin-top: 15px;
+            }
+
+            header nav.navbar.bg-dark {
+                background: #000!important;
+                padding: 10px 0 10px 0;
+            }
+
+            header nav.navbar .nav-item a {
+                color: #fff!important;
+                border-right: none;
+            }
+
+            .navbar-toggler {
+                margin-left: 90%;
+            }
+
+            .site-logo {
+                width: 260px;
+            }
+
+            .dropdown-item:focus, .dropdown-item:hover {
+                background-color: transparent;
+            }
+
+            .nav-link {
+                font-size: .85rem;
+            }
+
+            .nav-item {
+                margin: 0 45px;
+            }
+
+            .dropdown-menu {
+                border-top: 3px solid #da3426;
+                border-radius: 0;
+                background: rgba(0,0,0,0.8);
+                text-align: center;
+                font-size: .75rem;
+                top: 126%;
+                left: -50px;
+            }
+
+            .dropdown-item {
+                padding: .75rem 1.5rem;
+            }
+
+            .header-bottom img {
+                object-fit: cover;
+                object-position: 0 33%;
+                width: 100%;
+                height: 50vh;
+            }
+
+            .people-img {
+                object-position: 0 15%!important;
+            }
+
+            .gold-box {
+                background: #ece6d5;
+                padding: 15px 10px;
+            }
+
+            .slick-prev {
+                left: 0;
+                background: url(https://hrm.northeastern.edu/pageup/img/arrow_left.png);
+                background-size: cover;
+                top: 23vh;
+            }
+
+            .slick-next {
+                top: 23vh;
+                right: 0;
+                background: url(https://hrm.northeastern.edu/pageup/img/arrow_right.png);
+                background-size: cover;
+            }
+
+            .slick-next:before {
+                font-size: 3.8rem;
+                content: '';
+            }
+
+            .slick-prev:before {
+                font-size: 3.8rem;
+                content: '';
+            }
+
+            .slick-next, .slick-prev {
+                z-index: 500;
+                height: 1.8rem;
+                width: 1.8rem;
+            }
+
+            .slick-next:focus, .slick-next:hover {
+                background: url(https://hrm.northeastern.edu/pageup/img/arrow_right.png);
+                background-size: cover;
+            }
+
+            .slick-prev:focus, .slick-prev:hover {
+                background: url(https://hrm.northeastern.edu/pageup/img/arrow_left.png);
+                background-size: cover;
+            }
+
+            .slick-dots {
+                bottom: 25px;
+            }
+
+            .slick-dots li {
+                margin: 0;
+            }
+
+            .slick-dots li button {
+                padding: 0;
+            }
+
+            .slick-dots li button:before {
+                color: #fff;
+                opacity: .75;
+            }
+
+            .slick-dots li.slick-active, .slick-dots li.slick-active button:before {
+                opacity: 1;
+                color: #fff;
+            }
+
+            article {
+                padding: 60px 0 160px 0;
+            }
+
+            .job-red-text {
+                font-size: 20px!important;
+                display: inline-block;
+            }
+
+            .log-red-text {
+                display: inline-block;
+                text-align: left;
+                float: right;
+                margin-bottom: 1%;
+                width: 20%;
+            }
+
+            .log-red-text > a {
+                color: #cc0000!important;
+            }
+
+
+
+            #jobs-form input#search-keyword{
+                width: 73%;
+                background-image: none;
+                border: 1px solid #C1C1C1!important;
+                padding: 10px 5px;
+                margin-bottom: 20px;
+                font-weight: 300;
+                font-size: 16px;
+            }
+
+            #recent-jobs p {
+                text-align: center;
+            }
+
+            #jobs-form .button {
+                display: inline-block;
+                text-align: center;
+                border-radius: 0;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+                background-image: none;
+                border-color: #999;
+                background-color: #fff;
+                padding: 10px 20px;
+            }
+
+            #jobs-form td {
+                border-top: 1px solid #ddd;
+                padding: .75em 1em!important;
+                font-weight: 300;
+            }
+
+            .job-link {
+                color: #000!important;
+                font-weight: 400;
+            }
+
+
+            #job-details strong {
+                font-weight: bold;
+                font-size: 20px;
+            }
+
+            #job-content {
+                width: 73%;
+            }
+
+            #job-content p {
+                line-height: 1.5;
+                margin-bottom: 10px;
+            }
+
+            #job-content p:last-child {
+                margin-bottom: 1.5em;
+            }
+
+            #job-content h2 {
+                color: #cc0000;
+                font-weight: bold;
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            #job-content p span{
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 1.3;
+            }
+
+            #job-content table {
+                width: 100%!important;
+            }
+
+            #social-media {
+                margin-top: 1.5em;
+            }
+
+
+            .apply-link.button {
+                background: #cc0000!important;
+                color: #fff!important;
+                text-transform: uppercase!important;
+                font-size: 16px!important;
+                font-weight: normal!important;
+            }
+
+            .back-link.button, .employee-referral-link.button {
+                border: 1px solid #000!important;
+                text-transform: uppercase!important;
+                font-size: 16px!important;
+                font-weight: normal!important;
+            }
+
+            .back-link.button:hover, .employee-referral-link.button:hover {
+                background: #979797!important;
+
+            }
+
+            .back-link.button {
+                margin-right: 30px!important;
+            }
+
+            .employee-referral-link.button {
+                margin-left: 30px!important;
+            }
+
+
+            #search-filters{
+                float: right;
+                width: 20%;
+                background: #ece7d4;
+                padding: 20px;
+            }
+
+            #search-filters h3, #div_category_2 {
+                color: #cc0000;
+                font-weight: bold;
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            #search-filters label {
+                margin-bottom: 5px;
+                font-weight: 300;
+                font-size: 16px;
+            }
+
+
+            #campaignsDiv h2, #recent-jobs h2{
+                color: #cc0000;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+
+
+            #search-results table, #recent-jobs table {
+                width: 73%;
+            }
+
+
+            @media screen and (min-width: 768px) {
+                article {
+                    padding-top: 0;
+                }
+            }
+
+            @media screen and (min-width: 1600px) {
+                article {
+                    padding-top: 60px;
+                }
+            }
+
+            article .col-12 hr {
+                margin-bottom: 80px;
+            }
+
+            footer {
+                background-color: #000;
+                background-image: url(https://hrm.northeastern.edu/pageup/img/footer-watermark.png);
+                background-repeat: no-repeat;
+                background-size: 165px;
+                background-position: right bottom;
+                color: #fff;
+            }
+
+            footer .footer-top {
+                background: #ece6d5;
+            }
+
+            footer .footer-top ul li {
+                margin: 0 1rem;
+            }
+
+            footer .footer-top ul li a {
+                color: #000;
+                font-weight: bold;
+                font-size: 2rem;
+            }
+
+            .red-text {
+                color: #cc0000;
+                font-weight: bold;
+                font-size: .85rem;
+            }
+
+            hr {
+                width: 40px;
+                border-top: solid #cc0000;
+                border-left: none;
+                border-right: none;
+                margin-top: 10px;
+            }
+
+            aside p, aside label {
+                font-size: .75rem;
+            }
+
+            aside label {
+                margin-left: 5px;
+            }
+
+            aside a.login-text {
+                color: #cc0000;
+            }
+
+            footer p {
+                font-size: 1rem;
+                color: rgba(151,151,151,0.8);
+            }
+
+            footer p > a {
+                font-size: 1rem;
+                color: rgba(151,151,151,0.8);
+            }
+
+            footer p > a:hover {
+                color: #fff;
+            }
+
+            footer ul.popular-links li {
+                padding-bottom: 10px;
+            }
+
+            footer ul.popular-links li a {
+                color: #cecece;
+                font-size: .85rem;
+            }
+
+            footer input:not([type="submit"]) {
+                background: transparent;
+                border: none;
+                margin-bottom: 12px;
+                padding-bottom: 12px;
+                border-bottom: 2px solid #fff;
+                width: 100%;
+                color: #fff;
+            }
+
+            footer input::-webkit-input-placeholder {
+                color: #fff;
+            }
+
+            footer textarea {
+                background: transparent;
+                border: 2px solid #fff;
+                width: 100%;
+                color: #fff;
+                padding: 5px 10px;
+            }
+
+            footer input[type="submit"] {
+                background: transparent;
+                border: 2px solid #fff;
+                color: #fff;
+                padding: 5px 10px;
+                position: relative;
+                left: 78%;
+                bottom: 42px;
+            }
+
+            @media screen and (min-width: 767px) and (max-width: 1023px) {
+                footer input[type="submit"] {
+                    left: 62%;
+                }
+            }
+
+            @media screen and (min-width: 1024px) and (max-width: 1200px) {
+                footer input[type="submit"] {
+                    left: 70%;
+                }
+            }
+
+            footer .footer-bottom {
+                border-top: 2px solid #979797;
+            }
+
+            footer .footer-submenu-1 li {
+                margin-bottom: 28px;
+            }
+
+            footer .footer-submenu-1 li a {
+                color: rgba(255,255,254,0.8);
+                font-weight: bold;
+                text-transform: uppercase;
+                font-size: 1.2rem;
+            }
+
+            footer .footer-submenu-2 li {
+                margin: 0 8px;
+            }
+
+            footer .footer-submenu-2 li a {
+                color: rgba(255,255,254,0.8);
+                font-size: 1.2rem;
+                font-weight: 300;
+
+            }
+
+            footer .footer-submenu-2 li a:hover {
+                color: #fffffe;
+            }
+
+            ul.social {
+                height: 60px;
+            }
+
+            ul li.social-links {
+                width: 40px;
+                margin: 0 20px 0 0;
+                display: inline-block;
+            }
+
+            .cls-1 {
+                fill: rgba(255,255,254,0.6);
+            }
+        </style>
+    </head>
+    <body>
+        <header role="banner">
+           <div class="header-top"></div>
+           <div class="header-middle">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 mt-3">
+                            <img src="img/HRCareers.png" alt="Northeastern Logo" class="site-logo">
+                        </div>
+                        <!-- <div class="col-md-6 text-md-right">
+                            <ul class="subnav">
+                                <li class="d-inline-block"><a href="">Northeastern Home</a></li>
+                                <li class="d-inline-block"><a href="">Contact</a></li>
+                                <li class="d-inline-block"><a href="" class="help border-0">Help</a></li>
+                            </ul>
+                            <input type="search" name="sub-search" id="sub-search" placeholder="Search">
+                        </div> -->
+                    </div><!-- row -->
+                </div><!--container-->
+                <div class="col-md-12 col-lg-10 offset-lg-2">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                          <ul class="navbar-nav">
+                            <li class="nav-item active dropdown">
+                              <a class="nav-link dropdown-toggle" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Search Jobs<span class="sr-only">(current)</span></a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="https://careersmanager.pageuppeople.com/879/ci/en-us/listing#recent-jobs">Current Oportunities</a>
+                                <a class="dropdown-item" href="https://secure.pageuppeople.com/apply/879/aw/applicationForm/">Log in</a>
+                              </div>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="https://accomplishments.northeastern.edu/">Institutional Accomplishments</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="https://www.northeastern.edu/academic-plan/">Northeastern 2025</a>
+                                <a class="dropdown-item" href="http://www.northeastern.edu/oidi/">Diversity and Inclusion</a>
+                                <a class="dropdown-item" href="https://www.northeastern.edu/learnforlife/campuses/">Regional Campuses</a>
+                                <a class="dropdown-item" href="http://www.northeastern.edu/research/">Research</a>
+                                <a class="dropdown-item" href="https://news.northeastern.edu/?s=husky">News@Northeastern</a>
+                                <a class="dropdown-item" href="https://www.northeastern.edu/campusmap/" target="_blank">Campus Map</a>
+                              </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Benefits
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="https://www.northeastern.edu/hrm/benefits/">Benefits Overview</a>
+                                <a class="dropdown-item" href="https://www.youtube.com/watch?v=HymNgJlQE2o&feature=youtu.be" target="_blank">Benefits Video</a>
+                              </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Offices and Departments
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="https://www.northeastern.edu/academics/colleges/">Colleges and Schools </a>
+                                    <a class="dropdown-item" href="https://www.northeastern.edu/neuhome/about/administration/">Administration</a>
+                                </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </nav>
+                </div>
+           </div><!-- header middle -->
+            <div class="header-bottom">
+                <div><img src="img/neu_m042dh25b-‌internal.jpg" alt=""></div>
+                <div><img src="img/neu_m0411r881-‌internal.jpg" alt=""></div>
+                <div><img class="people-img" src="img/neu_m0425f44xrepl-master[5].jpeg" alt=""></div>
+            </div><!-- header bot-->
+        </header>
+        <article class="container" role="article">
+            <!-- <div class="col-12"><h2 class="text-center font-weight-bold">Current Opportunities</h2> <hr></div> -->
+            <div class="row">
+                    <section class="col-12">
+                            <p class="red-text mb-3 job-red-text">Job Search</p>
+                            <p class="log-red-text">You will be prompted to create an account when you apply for a position. Already have an account? <a href="https://secure.pageuppeople.com/apply/879/aw/applicationForm/">Log in here.</a></p>
+                            {form}
+                            {search-keyword placeholder="Search for jobs"}
+                            {search-filters button-text="Filter Results"}
+                            {messages}
+                            {pages}
+                            {/form}
+                    </section>
+            </div>
+        </article>
+        <footer>
+                <!--<div class="col-12 footer-top p-2">
+                    <ul class="text-center">
+                        <li class="d-inline-block"><a href="https://www.instagram.com/northeastern/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li class="d-inline-block"><a href="https://twitter.com/northeastern?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    </ul>
+                </div>-->
+                <div class="container">
+                    <div class="row pt-3 pb-3">
+                        <div class="col-sm-5 mt-3">
+                            <img src="img/HRCareers.png" alt="Northeastern Logo" class="site-logo">
+                            <p class="mt-3">Human Resources Management</p>
+                            <p class="mb-5">716 Columbus Ave., Boston, Massachusetts 02115  |  617.373.2230  |  <a href="mailto:hrminfo@northeastern.edu">hrminfo@northeastern.edu</a></p>
+                            <h4 class="mb-4">Popular Links</h4>
+                            <ul class="popular-links">
+                                <li><a href="http://www.northeastern.edu/">Explore Northeasterm</a></li>
+                                <li><a href="https://www.northeastern.edu/hrm/benefits/index.html">Benefits</a></li>
+                                <li><a href="https://accomplishments.northeastern.edu/">Institutional Accomplishments</a></li>
+                                <li><a href="https://news.northeastern.edu/">News @Northeastern</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4 offset-sm-3">
+                            <h3 class="mb-3">Contact Us</h3>
+                            <form action="post" action="mailto:hrminfo@northeastern.edu" role="form">
+                                <input type="email" placeholder="Email Address">
+                                <input type="tel" name="" id="" placeholder="Phone Number">
+                                <textarea name="" id="" cols="22" rows="10" class="mt-3">Message</textarea>
+                                <input type="submit" value="SEND">
+                            </form>
+                        </div>
+                    </div><!--row-->
+                    <div class="row footer-bottom pt-4 pb-4">
+                        <div class="col-sm-2">
+                            <ul class="footer-submenu-1">
+                                <li><a>Campuses</a></li>
+                                <li><a>Connect</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-10 col-lg-7">
+                            <ul class="footer-submenu-2">
+                                <li class="d-md-inline-block mb-2 mb-md-0"><a href="http://www.northeastern.edu/">Boston</a></li>
+                                <li class="d-md-inline-block mb-2 mb-md-0"><a href="https://www.northeastern.edu/campusmap/printable/burlington.html">Burlington</a></li>
+                                <li class="d-md-inline-block mb-2 mb-md-0"><a href="https://nahant.northeastern.edu/">Nahant</a></li>
+                                <li class="d-md-inline-block mb-2 mb-md-0"><a href="http://www.northeastern.edu/siliconvalley/">Silicon Valley</a></li>
+                                <li class="d-md-inline-block mb-2 mb-md-0"><a href="http://www.northeastern.edu/seattle/">Seattle</a></li>
+                                <li class="d-md-inline-block mb-2 mb-md-0"><a href="http://www.northeastern.edu/toronto/">Toronto</a></li>
+                                <li class="d-md-inline-block mb-2 mb-md-0"><a href="http://www.northeastern.edu/charlotte/">Charlotte</a></li>
+                            </ul>
+                            <ul class="social mt-4">
+                                <li class="social-links"><a href="//www.facebook.com/northeastern/" title="Friend us on Facebook" aria-label="Friend us on Facebook" target="_blank" class="gtrackexternal"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><style>.cls-1{}</style></defs><title>Friend us on Facebook</title><circle class="cls-1" cx="256" cy="256" r="256"></circle><path d="M301.6,151.2h36.3V97H286.5c-29.6,0-68.1,19-68.1,74.2v43H169.3v56.1h49.1v146H277v-146h48.8l8.1-56.1H277V178.5C277,160.1,286,151.2,301.6,151.2Z"></path></svg></a></li>
+                                <li class="social-links"><a href="//twitter.com/Northeastern" title="Follow us on Twitter" aria-label="Follow us on Twitter" target="_blank" class="gtrackexternal"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510.57 510.57"><defs><style>.cls-1{}</style></defs><title>Follow us on Twitter</title><path class="cls-1" d="M255.29,1.43C114.3,1.43,0,115.75,0,256.73S114.3,512,255.29,512,510.57,397.72,510.57,256.73,396.28,1.43,255.29,1.43Zm128.6,203.82c.13,2.76.19,5.53.19,8.33,0,85-64.72,183-183,183a182.12,182.12,0,0,1-98.62-28.89,131.78,131.78,0,0,0,15.34.89,129.07,129.07,0,0,0,79.9-27.53,64.43,64.43,0,0,1-60.09-44.7,62.61,62.61,0,0,0,12.1,1.15,63.61,63.61,0,0,0,17-2.25A64.39,64.39,0,0,1,115,232.22c0-.28,0-.55,0-.83a64.25,64.25,0,0,0,29.15,8.06,64.42,64.42,0,0,1-19.92-85.91,182.61,182.61,0,0,0,132.62,67.21,64.38,64.38,0,0,1,109.62-58.68,128.49,128.49,0,0,0,40.86-15.61A64.52,64.52,0,0,1,379,182.05a128.53,128.53,0,0,0,37-10.13A130.11,130.11,0,0,1,383.89,205.25Z" transform="translate(0 -1.43)"></path></svg></a></li>
+                                <li class="social-links"><a href="//www.youtube.com/user/Northeastern" title="Check us out on YouTube" aria-label="Check us out on YouTube" target="_blank" class="gtrackexternal"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><style>.cls-1{}</style></defs><title>Check us out on YouTube</title><g id="Layer_1" data-name="Layer 1"><polygon class="cls-1" points="221.28 308.14 308.19 256 221.28 203.86 221.28 308.14"></polygon><path class="cls-1" d="M256,0C114.62,0,0,114.61,0,256S114.62,512,256,512,512,397.38,512,256,397.38,0,256,0ZM395,267.22a476.39,476.39,0,0,1-2.79,48s-2.72,20.44-11,29.42c-10.57,11.81-22.41,11.87-27.85,12.58-38.91,3-97.33,3.07-97.33,3.07s-72.29-.71-94.53-3c-6.19-1.23-20.06-.88-30.65-12.67-8.34-9-11-29.42-11-29.42a476.12,476.12,0,0,1-2.79-48v-22.5a475.73,475.73,0,0,1,2.79-48s2.72-20.45,11-29.46c10.57-11.82,22.41-11.89,27.85-12.56,38.9-3,97.27-3,97.27-3h.12s58.37,0,97.27,3c5.42.67,17.28.74,27.85,12.54,8.34,9,11,29.46,11,29.46a476.39,476.39,0,0,1,2.79,48Z"></path></g></svg></a></li>
+                                <li class="social-links"><a href="https://www.linkedin.com/school/northeastern-university/" title="Connect with us on LinkedIn" aria-label="Connect with us on LinkedIn" target="_blank" class="gtrackexternal"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 255 255"><defs><style>.cls-1{}</style></defs><title>Connect with us on LinkedIn</title><path class="cls-1" d="M200.06,188.58V138.81c0-26.67-14.24-39.08-33.22-39.08-15.32,0-22.18,8.43-26,14.34v-12.3H112c.38,8.14,0,86.81,0,86.81h28.85V140.1a19.61,19.61,0,0,1,1-7c2.08-5.18,6.83-10.55,14.79-10.55,10.45,0,14.62,8,14.62,19.63v46.45h28.86ZM81.58,89.92c10.06,0,16.32-6.67,16.32-15-.18-8.51-6.26-15-16.13-15s-16.33,6.47-16.33,15c0,8.34,6.27,15,16,15ZM128.5,256A127.5,127.5,0,1,1,256,128.5,127.51,127.51,0,0,1,128.5,256ZM96,188.58V101.77H67.15v86.81Z" transform="translate(-1 -1)"></path></svg></a></li>
+                                <li class="social-links"><a href="https://www.instagram.com/northeastern/" title="See what we are up to on Instagram" aria-label="See what we are up to on Instagram" target="_blank" class="gtrackexternal"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 255 255"><defs><style>.cls-1{}</style></defs><title>See what we are up to on Instagram</title><path class="cls-1" d="M167.9,97v0c2.14,0,4.27,0,6.41,0a5.19,5.19,0,0,0,5-5.17V79.47A5.24,5.24,0,0,0,174,74.19H161.79a5.25,5.25,0,0,0-5.26,5.29c0,4,0,8.11,0,12.17a5.55,5.55,0,0,0,.31,1.81A5.22,5.22,0,0,0,162,97Zm-39.4,5.26a26.27,26.27,0,1,0,26.26,26.85A26.27,26.27,0,0,0,128.5,102.22Zm-50.8,14v.35q0,28.78,0,57.57a5.24,5.24,0,0,0,5.15,5.13q45.65,0,91.28,0a5.25,5.25,0,0,0,5.17-5.15V116.25H166.92a40.57,40.57,0,0,1,1.6,17.06,40.34,40.34,0,0,1-17.41,28.56,40.3,40.3,0,0,1-42.27,1.82,39.37,39.37,0,0,1-15.66-15.78c-5.48-10.09-6.35-20.68-3.14-31.67Zm102.67,77.09c.68-.11,1.35-.2,2-.35a14,14,0,0,0,10.66-10.87c.11-.58.19-1.16.28-1.73V76.62c-.09-.56-.17-1.13-.27-1.7a14,14,0,0,0-11.82-11.13l-.72-.12h-104c-.62.11-1.25.2-1.87.34A14,14,0,0,0,63.79,75.76c0,.24-.08.49-.12.73v104c.12.65.21,1.32.36,2A14.06,14.06,0,0,0,75.8,193.21c.28,0,.56.09.83.12ZM128.5,256A127.5,127.5,0,1,1,256,128.5,127.51,127.51,0,0,1,128.5,256Z" transform="translate(-1 -1)"></path></svg></a></li>
+                                <li class="social-links"><a href="https://www.snapchat.com/add/NortheasternU" title="Engage with us on SnapChat" aria-label="Engage with us on SnapChat" target="_blank" class="gtrackexternal"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256.01 256"><defs><style>.cls-1{}</style></defs><title>Engage with us on SnapChat</title><path class="cls-1" d="M128.51,0a128,128,0,1,0,128,128A128,128,0,0,0,128.51,0ZM208.1,169.92c-.95,2.23-5.24,5.39-20.25,7.7-1.22.19-1.7,1.79-2.43,5.14-.27,1.22-.54,2.42-.91,3.68a2,2,0,0,1-2.14,1.6h-.19a18.77,18.77,0,0,1-3.36-.42,44.54,44.54,0,0,0-9-1,40.48,40.48,0,0,0-6.51.55c-4.5.75-8.32,3.45-12.37,6.31-5.88,4.16-12,8.45-21.41,8.45-.41,0-.82,0-1.22,0h0c-.26,0-.53,0-.8,0-9.46,0-15.53-4.29-21.4-8.44-4-2.86-7.88-5.57-12.38-6.32a40.48,40.48,0,0,0-6.51-.55,44.33,44.33,0,0,0-9,1,19.77,19.77,0,0,1-3.36.48,2.11,2.11,0,0,1-2.33-1.66c-.38-1.28-.65-2.51-.91-3.7-.67-3.07-1.14-5-2.43-5.16-15-2.32-19.3-5.48-20.25-7.72a2.59,2.59,0,0,1-.23-1,1.69,1.69,0,0,1,1.41-1.76c23.06-3.8,33.4-27.37,33.83-28.37a.3.3,0,0,1,0-.08c1.41-2.86,1.68-5.34.82-7.38-1.58-3.73-6.74-5.37-10.16-6.45-.84-.26-1.63-.51-2.25-.76-6.82-2.7-7.39-5.46-7.12-6.87.46-2.41,3.67-4.08,6.26-4.08a4.49,4.49,0,0,1,1.87.37,19.84,19.84,0,0,0,8.22,2.17c3.29,0,4.73-1.39,4.91-1.57-.09-1.56-.19-3.19-.3-4.87-.68-10.9-1.54-24.45,1.91-32.18,10.34-23.18,32.26-25,38.74-25l2.83,0h.39c6.48,0,28.45,1.8,38.8,25,3.45,7.74,2.6,21.3,1.91,32.19l0,.48c-.1,1.51-.19,3-.27,4.4a6.57,6.57,0,0,0,4.48,1.55h0a20.51,20.51,0,0,0,7.75-2.15,5.84,5.84,0,0,1,2.4-.47,7.39,7.39,0,0,1,2.77.53l0,0c2.31.82,3.83,2.44,3.86,4.14s-1.19,4-7.17,6.36c-.62.24-1.41.49-2.25.76-3.42,1.09-8.58,2.72-10.16,6.45-.86,2-.59,4.52.82,7.38a.3.3,0,0,1,0,.08c.43,1,10.76,24.57,33.83,28.37a1.7,1.7,0,0,1,1.42,1.76A2.77,2.77,0,0,1,208.1,169.92Z" transform="translate(-0.51)"></path></svg></a></li>
+                            </ul>
+                        </div>
+                        </div>
+                        <div class="col-sm-7">
+                            <p><a href="//www.google.com/maps/place/360+Huntington+Ave,+Boston,+MA+02115/@42.339348,-71.0903674,17z/data=!3m1!4b1!4m5!3m4!1s0x89e37a185b1286ff:0x2c025c6d4b00cba2!8m2!3d42.339348!4d-71.0881734">360 Huntington Ave., Boston, Massachusetts 02115</a>  |  <a href="tel:6173732000" aria-label="6 1 7. 3 7 3. 2 0 0 0.">617.373.2000</a>  |  <a href="tel:6173733768" title="TTY" aria-label="TTY">TTY 617.373.3768</a>  |  <a href="https://www.northeastern.edu/emergency-information">Emergency information</a></p>
+                            <p class="mt-3">&copy;2018 Northeastern University | <a href="https://www.northeastern.edu/privacy-information">Privacy</a> | <a href="https://my.northeastern.edu/#_ga=2.21491448.272252528.1537138105-1900538799.1533150876">MyNortheastern</a></p>
+                        </div>
+                    </div><!--row-->
+                </div><!--container-->
+            </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('.header-bottom').slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 6000,
+                    dots: true
+                });
+            });
+        </script>
+    </body>
+</html>

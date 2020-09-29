@@ -1,0 +1,358 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/********************************************************************************************
+********************************* GENERAL STYLES ********************************************
+********************************************************************************************/
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.container {
+    max-width: 94vw;
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+header {
+    background: #000;
+}
+
+header ul {
+    margin-top: 20px;
+}
+
+header ul li a {
+    color: #ababab;
+    border-right: 1px solid #ababab;
+    padding: 0 8px 0 5px;
+    font-size: .75rem;
+}
+
+
+header input[type="search"] {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ababab;
+    width: 275px;
+    margin-top: 15px;
+}
+
+header nav.navbar.bg-dark {
+    background: #000!important;
+    padding: 10px 0 10px 0;
+}
+
+header nav.navbar .nav-item a {
+    color: #fff!important;
+    border-right: none;
+}
+
+.site-logo {
+    width: 260px;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: transparent;
+}
+
+.nav-link {
+    font-size: .85rem;
+}
+
+.nav-item {
+    margin: 0 45px;
+}
+
+.dropdown-menu {
+    border-top: 3px solid #da3426;
+    border-radius: 0;
+    background: rgba(0,0,0,0.8);
+    text-align: center;
+    font-size: .75rem;
+    top: 150%;
+    left: -50px;
+}
+
+.dropdown-item {
+    padding: .75rem 1.5rem;
+}
+
+.header-bottom img {
+    object-fit: cover;
+    width: 100%;
+    height: 50vh;
+}
+
+.gold-box {
+    background: #ece6d5;
+    padding: 15px 10px;
+}
+
+.slick-prev {
+    left: 0;
+    background: transparent;
+    top: 23vh;
+}
+
+.slick-next {
+    top: 23vh;
+    right: 0;
+}
+
+.slick-next:before {
+    font-size: 3.8rem;
+    content: '\203A';
+}
+
+.slick-prev:before { 
+    font-size: 3.8rem;
+    content: '\2039';
+}
+
+.slick-next, .slick-prev {
+    z-index: 500;
+    height: 1.8rem;
+    width: 1.8rem;
+}
+
+.slick-dots {
+    bottom: 25px;
+}
+
+.slick-dots li {
+    margin: 0;
+}
+
+.slick-dots li button {
+    padding: 0;
+}
+
+.slick-dots li button:before {
+    color: #fff;
+    opacity: .75;
+}
+
+.slick-dots li.slick-active, .slick-dots li.slick-active button:before {
+    opacity: 1;
+    color: #fff;
+}
+
+article {
+    padding: 60px 0 160px 0;
+}
+
+@media screen and (min-width: 768px) {
+    article {
+        padding-top: 0;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    article {
+        padding-top: 60px;
+    }
+}
+
+article .col-12 hr {
+    margin-bottom: 80px;
+}
+
+footer {
+    background-color: #000;
+    background-image: url(../img/footer-watermark.png);
+    background-repeat: no-repeat;
+    background-size: 165px;
+    background-position: right bottom;
+    color: #fff;
+}
+
+footer .footer-top {
+    background: #ece6d5;
+}
+
+footer .footer-top ul li {
+    margin: 0 1rem;
+}
+
+footer .footer-top ul li a {
+    color: #000;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.red-text {
+    color: #cc0000;
+    font-weight: bold;
+    font-size: .85rem;
+}
+
+hr {
+    width: 40px;
+    border-top: solid #cc0000;
+    border-left: none;
+    border-right: none;
+    margin-top: 10px;
+}
+
+aside p, aside label {
+    font-size: .75rem;
+}
+
+aside label {
+    margin-left: 5px;
+}
+
+aside a.login-text {
+    color: #cc0000;
+}
+
+footer p {
+    font-size: 1rem;
+    color: rgba(151,151,151,0.8);
+}
+
+footer p > a {
+    font-size: 1rem;
+    color: rgba(151,151,151,0.8);  
+}
+
+footer p > a:hover {
+    color: #fff;
+}
+
+footer ul.popular-links li {
+    padding-bottom: 10px;
+}
+
+footer ul.popular-links li a {
+    color: #cecece;
+    font-size: .85rem;
+}
+
+footer input:not([type="submit"]) {
+    background: transparent;
+    border: none;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #fff;
+    width: 100%;
+}
+
+footer input::-webkit-input-placeholder {
+    color: #fff;
+}
+
+footer textarea {
+    background: transparent;
+    border: 2px solid #fff;
+    width: 100%;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+footer input[type="submit"] {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 5px 10px;
+    position: relative;
+    left: 78%;
+    bottom: 42px;
+}
+
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+    footer input[type="submit"] {
+        left: 62%;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+    footer input[type="submit"] {
+        left: 70%;
+    }
+}
+
+footer .footer-bottom {
+    border-top: 2px solid #979797;
+}
+
+footer .footer-submenu-1 li {
+    margin-bottom: 28px;
+}
+
+footer .footer-submenu-1 li a {
+    color: rgba(255,255,254,0.8);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+footer .footer-submenu-2 li {
+    margin: 0 8px;
+}
+
+footer .footer-submenu-2 li a {
+    color: rgba(255,255,254,0.8);
+    font-size: 1.2rem;
+    font-weight: 300;
+    
+}
+
+footer .footer-submenu-2 li a:hover {
+    color: #fffffe;
+}
