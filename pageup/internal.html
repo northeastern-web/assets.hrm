@@ -1,5 +1,5 @@
 <!DOCTYPE html>
- <html>
+ <html lang="en-us">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -174,16 +174,20 @@
 
             .slick-prev {
                 left: 0;
-                background: url(https://assets.hrm.northeastern.edu/pageup/img/arrow_left.png);
-                background-size: cover;
+                background-image: url(https://assets.hrm.northeastern.edu/pageup/img/arrow_left.png);
                 top: 23vh;
+                background-size: 30px;
+                background-repeat: no-repeat;
+                padding: 15px;
             }
 
             .slick-next {
                 top: 23vh;
                 right: 0;
-                background: url(https://assets.hrm.northeastern.edu/pageup/img/arrow_right.png);
-                background-size: cover;
+                background-image: url(https://assets.hrm.northeastern.edu/pageup/img/arrow_right.png);
+                background-size: 30px;
+                background-repeat: no-repeat;
+                padding: 15px;
             }
 
             .slick-next:before {
@@ -203,13 +207,19 @@
             }
 
             .slick-next:focus, .slick-next:hover {
-                background: url(https://assets.hrm.northeastern.edu/pageup/img/arrow_right.png);
-                background-size: cover;
+                background-image: url(https://assets.hrm.northeastern.edu/pageup/img/arrow_right.png);
+                background-color: #000;
+                background-size: 30px;
+                background-repeat: no-repeat;
+                padding: 15px;
             }
 
             .slick-prev:focus, .slick-prev:hover {
-                background: url(https://assets.hrm.northeastern.edu/pageup/img/arrow_left.png);
-                background-size: cover;
+                background-image: url(https://assets.hrm.northeastern.edu/pageup/img/arrow_left.png);
+                background-color: #000;
+                background-size: 30px;
+                background-repeat: no-repeat;
+                padding: 15px;
             }
 
             .slick-dots {
@@ -217,21 +227,37 @@
             }
 
             .slick-dots li {
-                margin: 0;
+                margin: 0 2px;
+                width: 44px;
+                height: 44px;
             }
 
             .slick-dots li button {
                 padding: 0;
+                width: 44px;
+                height: 44px;
             }
 
             .slick-dots li button:before {
                 color: #fff;
                 opacity: .75;
+                font-size: 16px;
+                width: 44px;
+                height: 44px;
+                line-height: 44px;
+                top: 0;
+                left: 0;
             }
 
-            .slick-dots li.slick-active, .slick-dots li.slick-active button:before {
+            .slick-dots li.slick-active,
+            .slick-dots li.slick-active button:before {
                 opacity: 1;
                 color: #fff;
+                border-radius: 4px;
+            }
+
+            .slick-dots li.slick-active {
+                background: rgba(0, 0, 0, 0.6);
             }
 
             article {
@@ -624,7 +650,7 @@
                               </div>
                             </li>
                             <li class="nav-item dropdown">
-                              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="navbarDropdownMenuLink">
                                 Benefits
                               </a>
                               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -652,28 +678,22 @@
                 <div><img class="people-img" src="img/neu_m0425f44xrepl-master[5].jpeg" alt=""></div>
             </div><!-- header bot-->
         </header>
-        <article class="container" role="article">
+        <article class="container" role="main">
             <!-- <div class="col-12"><h2 class="text-center font-weight-bold">Current Opportunities</h2> <hr></div> -->
             <div class="row">
                     <section class="col-12">
                             <p class="red-text mb-3 job-red-text">Job Search</p>
-                            <p class="log-red-text">You will be prompted to create an account when you apply for a position. Already have an account? <a href="https://secure.pageuppeople.com/apply/879/aw/applicationForm/">Log in here.</a></p>
-                            {form}
-                            {search-keyword placeholder="Search for jobs"}
-                            {search-filters button-text="Filter Results"}
+                            <p class="log-red-text" role="complementary">You will be prompted to create an account when you apply for a position. Already have an account? <a href="https://secure.pageuppeople.com/apply/879/aw/applicationForm/">Log in here.</a></p>
+                            {form role="form"}
+                            {search-keyword role="search" aria-label="Search for jobs" placeholder="Search for jobs"}
+                            {search-filters role="complementary" aria-label="Filter results" button-text="Filter Results"}
                             {messages}
                             {pages}
                             {/form}
                     </section>
             </div>
         </article>
-        <div id="local-footer">
-                <!--<div class="col-12 footer-top p-2">
-                    <ul class="text-center">
-                        <li class="d-inline-block"><a href="https://www.instagram.com/northeastern/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                        <li class="d-inline-block"><a href="https://twitter.com/northeastern?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                    </ul>
-                </div>-->
+        <div id="local-footer" role="contentinfo">
                 <div class="container">
                     <div class="row pt-3 pb-3">
                         <div class="col-sm-5 mt-3">
@@ -711,6 +731,8 @@
                     slidesToScroll: 1,
                     autoplay: true,
                     autoplaySpeed: 6000,
+                    speed: 1000,
+                    fade: true,
                     dots: true
                 });
             });
