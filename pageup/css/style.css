@@ -184,7 +184,8 @@ header nav.navbar .nav-item a {
 
 .slick-dots li button:before {
     color: #fff;
-    opacity: .75;
+    opacity: 0.85;
+    text-shadow: 0 0 5px #000;
 }
 
 .slick-dots li.slick-active, .slick-dots li.slick-active button:before {
